@@ -8,9 +8,10 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-MigrationRulesCollector >> collectRulesFromMethod: aCompiledMethod [
+MigrationRulesCollector >> collectRules: aDeprecationSelector fromMethod: aCompiledMethod [
 	| ruleCollectingVisitor |
 	ruleCollectingVisitor := MigrationRulesCollectingVisitor new.
+	ruleCollectingVisitor deprecationSelector: aDeprecationSelector.
 	aCompiledMethod ast acceptVisitor: ruleCollectingVisitor.
 	
 	rules addAll: (ruleCollectingVisitor rules collect: [ :rule |

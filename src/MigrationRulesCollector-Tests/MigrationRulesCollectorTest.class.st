@@ -6,7 +6,7 @@ Class {
 
 { #category : #'as yet unclassified' }
 MigrationRulesCollectorTest >> mockMethod [
-	self deprecated: 'This method is deprecated for some reason' transformWith: '`@receiver basicDescription: `@arg' -> '`@receiver description: `@arg'.
+	"self deprecated: 'This method is deprecated for some reason' transformWith: '`@receiver basicDescription: `@arg' -> '`@receiver description: `@arg'."
 ]
 
 { #category : #'as yet unclassified' }

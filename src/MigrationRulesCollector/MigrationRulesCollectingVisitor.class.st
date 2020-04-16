@@ -2,10 +2,16 @@ Class {
 	#name : #MigrationRulesCollectingVisitor,
 	#superclass : #RBProgramNodeVisitor,
 	#instVars : [
-		'rules'
+		'rules',
+		'deprecationSelector'
 	],
 	#category : #MigrationRulesCollector
 }
+
+{ #category : #accessing }
+MigrationRulesCollectingVisitor >> deprecationSelector: aString [
+	deprecationSelector := aString
+]
 
 { #category : #initialization }
 MigrationRulesCollectingVisitor >> initialize [
@@ -22,7 +28,7 @@ MigrationRulesCollectingVisitor >> rules [
 MigrationRulesCollectingVisitor >> visitMessageNode: aMessageNode [
 	| ruleNode |
 	
-	(aMessageNode selector = #deprecated:transformWith:)
+	(aMessageNode selector = deprecationSelector)
 		ifFalse: [ ^ self ].
 
 	ruleNode := aMessageNode arguments second.
