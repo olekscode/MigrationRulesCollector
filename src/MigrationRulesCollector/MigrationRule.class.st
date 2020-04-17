@@ -1,13 +1,9 @@
 Class {
 	#name : #MigrationRule,
-	#superclass : #Object,
+	#superclass : #DeprecationRule,
 	#instVars : [
 		'antecedent',
 		'consequent',
-		'method',
-		'explanation',
-		'date',
-		'version',
 		'condition'
 	],
 	#category : #MigrationRulesCollector
@@ -15,24 +11,12 @@ Class {
 
 { #category : #comparing }
 MigrationRule >> = anotherRule [
-	(self species = anotherRule species)
+	super = anotherRule
 		ifFalse: [ ^ false ].
-
+	
 	((self antecedent = anotherRule antecedent) and: (self consequent = anotherRule consequent))
 		ifFalse: [ ^ false ].
 		
-	(self method = anotherRule method)
-		ifFalse: [ ^ false ].
-		
-	(self date = anotherRule date)
-		ifFalse: [ ^ false ].
-		
-	(self version = anotherRule version)
-		ifFalse: [ ^ false ].
-		
-	(self explanation = anotherRule explanation)
-		ifFalse: [ ^ false ].
-	
 	(self condition asString = anotherRule condition asString)
 		ifFalse: [ ^ false ].
 		
@@ -79,26 +63,6 @@ MigrationRule >> consequentTree [
 	^ RBParser parseRewriteExpression: consequent
 ]
 
-{ #category : #accessing }
-MigrationRule >> date [
-	^ date
-]
-
-{ #category : #accessing }
-MigrationRule >> date: anObject [
-	date := anObject
-]
-
-{ #category : #accessing }
-MigrationRule >> explanation [
-	^ explanation
-]
-
-{ #category : #accessing }
-MigrationRule >> explanation: anObject [
-	explanation := anObject
-]
-
 { #category : #testing }
 MigrationRule >> isAntecedentAMessageSend [
 	(self antecedentTree isMessage)
@@ -136,22 +100,31 @@ MigrationRule >> isMethodRenaming [
 	^ true
 ]
 
-{ #category : #accessing }
-MigrationRule >> method [
-	^ method
+{ #category : #testing }
+MigrationRule >> isMigrationRule [
+	^ true
 ]
 
-{ #category : #accessing }
-MigrationRule >> method: anObject [
-	method := anObject
-]
-
-{ #category : #accessing }
-MigrationRule >> version [
-	^ version
-]
-
-{ #category : #accessing }
-MigrationRule >> version: anObject [
-	version := anObject
+{ #category : #testing }
+MigrationRule >> isValid [
+	self antecedentTree isMessage 
+		ifFalse: [ ^ false ].
+		
+	self antecedentTree selector = method selector
+		ifFalse: [ ^ false ].
+		
+	self antecedentTree receiver class = RBPatternVariableNode
+		ifFalse: [ ^ false ].
+		
+	(self antecedentTree arguments allSatisfy: [ :each |
+		each class = RBPatternVariableNode ])
+		ifFalse: [ ^ false ].
+		
+	self consequent isEmpty
+		ifTrue: [ ^ false ].
+		
+	self antecedentTree = self consequentTree
+		ifTrue: [ ^ false ].
+		
+	^ true
 ]

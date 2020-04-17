@@ -12,6 +12,7 @@ MigrationRulesCollector >> collectRulesFromImage [
 	| selectors senders |
 	
 	selectors := { 
+		#deprecated: .
 		#deprecated:on:in:transformWith: .
 		#deprecated:on:in:transformWith:when: .
 		#deprecated:transformWith: .
