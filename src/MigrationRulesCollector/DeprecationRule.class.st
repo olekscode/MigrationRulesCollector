@@ -51,7 +51,7 @@ DeprecationRule >> explanation: anObject [
 ]
 
 { #category : #testing }
-DeprecationRule >> isMigrationRule [
+DeprecationRule >> isRewriterRule [
 	^ false
 ]
 

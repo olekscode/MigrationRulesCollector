@@ -40,7 +40,7 @@ MigrationRulesCollectingVisitor >> visitDeprecatedOnInTransformWith: aMessageNod
 	| ruleNode |
 	ruleNode := aMessageNode arguments fourth.
 
-	rules add: (MigrationRule new
+	rules add: (RewriterRule new
 		antecedent: ruleNode receiver value;
 		consequent: ruleNode arguments first value;
 		explanation: aMessageNode arguments first value;
@@ -54,7 +54,7 @@ MigrationRulesCollectingVisitor >> visitDeprecatedOnInTransformWithWhen: aMessag
 	| ruleNode |
 	ruleNode := aMessageNode arguments fourth.
 
-	rules add: (MigrationRule new
+	rules add: (RewriterRule new
 		antecedent: ruleNode receiver value;
 		consequent: ruleNode arguments first value;
 		explanation: aMessageNode arguments first value;
@@ -69,7 +69,7 @@ MigrationRulesCollectingVisitor >> visitDeprecatedTransformWith: aMessageNode [
 	| ruleNode |
 	ruleNode := aMessageNode arguments second.
 
-	rules add: (MigrationRule new
+	rules add: (RewriterRule new
 		antecedent: ruleNode receiver value;
 		consequent: ruleNode arguments first value;
 		explanation: aMessageNode arguments first value;
@@ -81,7 +81,7 @@ MigrationRulesCollectingVisitor >> visitDeprecatedTransformWithWhen: aMessageNod
 	| ruleNode |
 	ruleNode := aMessageNode arguments second.
 
-	rules add: (MigrationRule new
+	rules add: (RewriterRule new
 		antecedent: ruleNode receiver value;
 		consequent: ruleNode arguments first value;
 		explanation: aMessageNode arguments first value;

@@ -46,7 +46,7 @@ MigrationRulesCollectorTest >> testDeprecatedOnInTransformWith [
 	collector collectRulesFromMethod: self class >> #mockDeprecatedOnInTransformWith.
 	
 	expected := OrderedCollection withAll: { 
-		MigrationRule new
+		RewriterRule new
 			antecedent: '`@receiver basicDescription: `@arg';
 			consequent: '`@receiver description: `@arg';
 			explanation: 'This method is deprecated for some reason';
@@ -66,7 +66,7 @@ MigrationRulesCollectorTest >> testDeprecatedOnInTransformWithWhen [
 	collector collectRulesFromMethod: self class >> #mockDeprecatedOnInTransformWithWhen.
 	
 	expected := OrderedCollection withAll: { 
-		MigrationRule new
+		RewriterRule new
 			antecedent: '`@receiver basicDescription: `@arg';
 			consequent: '`@receiver description: `@arg';
 			explanation: 'This method is deprecated for some reason';
@@ -87,7 +87,7 @@ MigrationRulesCollectorTest >> testDeprecatedTransformWith [
 	collector collectRulesFromMethod: self class >> #mockDeprecatedTransformWith.
 	
 	expected := OrderedCollection withAll: { 
-		MigrationRule new
+		RewriterRule new
 			antecedent: '`@receiver basicDescription: `@arg';
 			consequent: '`@receiver description: `@arg';
 			explanation: 'This method is deprecated for some reason';
@@ -105,7 +105,7 @@ MigrationRulesCollectorTest >> testDeprecatedTransformWithWhen [
 	collector collectRulesFromMethod: self class >> #mockDeprecatedTransformWithWhen.
 	
 	expected := OrderedCollection withAll: { 
-		MigrationRule new
+		RewriterRule new
 			antecedent: '`@receiver basicDescription: `@arg';
 			consequent: '`@receiver description: `@arg';
 			explanation: 'This method is deprecated for some reason';

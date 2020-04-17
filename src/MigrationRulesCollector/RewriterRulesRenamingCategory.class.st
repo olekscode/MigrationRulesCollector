@@ -1,16 +1,12 @@
 Class {
-	#name : #MigrationRulesRenamingCategory,
-	#superclass : #MigrationRulesValidCategory,
+	#name : #RewriterRulesRenamingCategory,
+	#superclass : #RewriterRulesOneToOneCategory,
 	#category : #MigrationRulesCollector
 }
 
 { #category : #'as yet unclassified' }
-MigrationRulesRenamingCategory class >> fits: aRule [
+RewriterRulesRenamingCategory class >> fits: aRule [
 	(super fits: aRule)
-		ifFalse: [ ^ false ].
-	
-	"Consequent must be a message node"
-	(aRule consequentTree isMessage)
 		ifFalse: [ ^ false ].
 		
 	"Antecedent and consequent must have the same receiver"

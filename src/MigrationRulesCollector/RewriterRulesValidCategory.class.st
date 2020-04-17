@@ -1,11 +1,11 @@
 Class {
-	#name : #MigrationRulesValidCategory,
-	#superclass : #MigrationRulesCategory,
+	#name : #RewriterRulesValidCategory,
+	#superclass : #RewriterRulesCategory,
 	#category : #MigrationRulesCollector
 }
 
 { #category : #'as yet unclassified' }
-MigrationRulesValidCategory class >> fits: aRule [
+RewriterRulesValidCategory class >> fits: aRule [
 	(super fits: aRule)
 		ifFalse: [ ^ false ].
 	

@@ -8,13 +8,13 @@ Class {
 MigrationRuleTest >> testEquality [
 	| rule sameRule |
 	
-	rule := MigrationRule new
+	rule := RewriterRule new
 		antecedent: '`@receiver basicDescription: `@arg';
 		consequent: '`@receiver description: `@arg';
 		method: self class >> #testEquality;
 		yourself.
 		
-	sameRule := MigrationRule new
+	sameRule := RewriterRule new
 		antecedent: '`@receiver basicDescription: `@arg';
 		consequent: '`@receiver description: `@arg';
 		method: self class >> #testEquality;
@@ -27,13 +27,13 @@ MigrationRuleTest >> testEquality [
 MigrationRuleTest >> testInequalityDifferentAntecedent [
 	| rule differentRule |
 	
-	rule := MigrationRule new
+	rule := RewriterRule new
 		antecedent: '`@receiver basicDescription: `@arg';
 		consequent: '`@receiver description: `@arg';
 		method: self class >> #testEquality;
 		yourself.
 		
-	differentRule := MigrationRule new
+	differentRule := RewriterRule new
 		antecedent: '`@receiver basicDescription';
 		consequent: '`@receiver description: `@arg';
 		method: self class >> #testEquality;
@@ -46,13 +46,13 @@ MigrationRuleTest >> testInequalityDifferentAntecedent [
 MigrationRuleTest >> testInequalityDifferentConsequent [
 	| rule differentRule |
 	
-	rule := MigrationRule new
+	rule := RewriterRule new
 		antecedent: '`@receiver basicDescription: `@arg';
 		consequent: '`@receiver description: `@arg';
 		method: self class >> #testEquality;
 		yourself.
 		
-	differentRule := MigrationRule new
+	differentRule := RewriterRule new
 		antecedent: '`@receiver basicDescription: `@arg';
 		consequent: '`@receiver description';
 		method: self class >> #testEquality;
@@ -65,13 +65,13 @@ MigrationRuleTest >> testInequalityDifferentConsequent [
 MigrationRuleTest >> testInequalityDifferentMethod [
 	| rule differentRule |
 	
-	rule := MigrationRule new
+	rule := RewriterRule new
 		antecedent: '`@receiver basicDescription: `@arg';
 		consequent: '`@receiver description: `@arg';
 		method: self class >> #testEquality;
 		yourself.
 		
-	differentRule := MigrationRule new
+	differentRule := RewriterRule new
 		antecedent: '`@receiver basicDescription: `@arg';
 		consequent: '`@receiver description: `@arg';
 		method: self class >> #testInequalityDifferentMethod;
