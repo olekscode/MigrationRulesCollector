@@ -1,17 +1,18 @@
 Class {
 	#name : #RewriterRulesOneToOneCategory,
 	#superclass : #RewriterRulesValidCategory,
-	#category : #MigrationRulesCollector
+	#category : #MigrationRulesClassifier
 }
 
 { #category : #'as yet unclassified' }
 RewriterRulesOneToOneCategory class >> fits: aRule [
-	(super fits: aRule)
-		ifFalse: [ ^ false ].
-	
 	"Consequent must be a message node"
-	(aRule consequentTree isMessage)
+	aRule consequentTree isMessage
 		ifFalse: [ ^ false ].
+		
+	"Its receiver can not be a message node"
+	aRule consequentTree receiver isMessage
+		ifTrue: [ ^ false ].
 		
 	"All arguments of consequent must be primitive (Rewriter variables)"
 	(aRule consequentTree arguments allSatisfy: [ :each |

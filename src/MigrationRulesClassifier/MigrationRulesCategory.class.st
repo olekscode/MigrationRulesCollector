@@ -5,7 +5,7 @@ Class {
 		'rules',
 		'subcategories'
 	],
-	#category : #MigrationRulesCollector
+	#category : #MigrationRulesClassifier
 }
 
 { #category : #'as yet unclassified' }

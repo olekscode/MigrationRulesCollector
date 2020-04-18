@@ -12,5 +12,6 @@ BaselineOfMigrationRulesCollector >> baseline: spec [
 		"Packages"
 		spec 
 			package: 'MigrationRulesCollector';
-			package: 'MigrationRulesCollector-Tests' with: [ spec requires: #(MigrationRulesCollector) ] ].
+			package: 'MigrationRulesCollector-Tests' with: [ spec requires: #(MigrationRulesCollector) ];
+			package: 'MigrationRulesClassifier' with: [ spec requires: #(MigrationRulesCollector) ] ].
 ]

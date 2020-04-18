@@ -1,14 +1,11 @@
 Class {
 	#name : #RewriterRulesValidCategory,
 	#superclass : #RewriterRulesCategory,
-	#category : #MigrationRulesCollector
+	#category : #MigrationRulesClassifier
 }
 
 { #category : #'as yet unclassified' }
 RewriterRulesValidCategory class >> fits: aRule [
-	(super fits: aRule)
-		ifFalse: [ ^ false ].
-	
 	aRule antecedentTree isMessage 
 		ifFalse: [ ^ false ].
 		
