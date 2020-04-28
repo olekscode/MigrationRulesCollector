@@ -67,3 +67,14 @@ RewriterRule >> consequentTree [
 RewriterRule >> isRewriterRule [
 	^ true
 ]
+
+{ #category : #printing }
+RewriterRule >> printOn: aStream [
+	aStream 
+		nextPutAll: self class name;
+		nextPutAll: ' (';
+		nextPutAll: antecedent;
+		nextPutAll: ' => ';
+		nextPutAll: consequent;
+		nextPut: $).
+]

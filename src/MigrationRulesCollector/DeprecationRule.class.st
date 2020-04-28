@@ -65,6 +65,15 @@ DeprecationRule >> method: anObject [
 	method := anObject
 ]
 
+{ #category : #printing }
+DeprecationRule >> printOn: aStream [
+	aStream 
+		nextPutAll: self class name;
+		nextPutAll: ' (';
+		nextPutAll: explanation;
+		nextPut: $).
+]
+
 { #category : #accessing }
 DeprecationRule >> version [
 	^ version
