@@ -1,15 +1,16 @@
 Class {
 	#name : #DeprecationCategory,
-	#superclass : #RuleCategory,
+	#superclass : #Category,
 	#category : #PharoDeprecationsClassifier
 }
 
-{ #category : #accessing }
-DeprecationCategory >> condition [
-	^ RewriterRuleCategory new condition not
+{ #category : #initialization }
+DeprecationCategory >> initialize [ 
+	super initialize.
+	self addSubcategories: (self class subclasses collect: [ :each | each new ]).
 ]
 
 { #category : #accessing }
 DeprecationCategory >> name [
-	^ 'Deprecations'
+	^ 'All rules'
 ]

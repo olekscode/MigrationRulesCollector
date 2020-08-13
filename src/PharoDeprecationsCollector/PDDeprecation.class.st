@@ -1,17 +1,19 @@
 Class {
-	#name : #DeprecationRule,
+	#name : #PDDeprecation,
 	#superclass : #Object,
 	#instVars : [
 		'method',
 		'explanation',
 		'date',
-		'version'
+		'version',
+		'transformationRule',
+		'transformationCondition'
 	],
 	#category : #PharoDeprecationsCollector
 }
 
 { #category : #comparing }
-DeprecationRule >> = anotherRule [
+PDDeprecation >> = anotherRule [
 	(self species = anotherRule species)
 		ifFalse: [ ^ false ].
 		
@@ -31,55 +33,76 @@ DeprecationRule >> = anotherRule [
 ]
 
 { #category : #accessing }
-DeprecationRule >> date [
+PDDeprecation >> date [
 	^ date
 ]
 
 { #category : #accessing }
-DeprecationRule >> date: anObject [
+PDDeprecation >> date: anObject [
 	date := anObject
 ]
 
 { #category : #accessing }
-DeprecationRule >> explanation [
+PDDeprecation >> explanation [
 	^ explanation
 ]
 
 { #category : #accessing }
-DeprecationRule >> explanation: anObject [
+PDDeprecation >> explanation: anObject [
 	explanation := anObject
 ]
 
 { #category : #testing }
-DeprecationRule >> isRewriterRule [
-	^ false
+PDDeprecation >> isTransforming [
+	^ transformationRule isNotNil
 ]
 
 { #category : #accessing }
-DeprecationRule >> method [
+PDDeprecation >> method [
 	^ method
 ]
 
 { #category : #accessing }
-DeprecationRule >> method: anObject [
+PDDeprecation >> method: anObject [
 	method := anObject
 ]
 
 { #category : #printing }
-DeprecationRule >> printOn: aStream [
+PDDeprecation >> printOn: aStream [
 	aStream 
 		nextPutAll: self class name;
 		nextPutAll: ' (';
-		nextPutAll: explanation;
+		print: method;
 		nextPut: $).
 ]
 
 { #category : #accessing }
-DeprecationRule >> version [
+PDDeprecation >> transformationCondition [
+	^ transformationCondition
+]
+
+{ #category : #accessing }
+PDDeprecation >> transformationCondition: anObject [
+	transformationCondition := anObject
+]
+
+{ #category : #accessing }
+PDDeprecation >> transformationRule [
+	^ transformationRule
+]
+
+{ #category : #accessing }
+PDDeprecation >> transformationRule: aRule [
+	transformationRule := aRule.
+	aRule deprecation: self.
+]
+
+{ #category : #accessing }
+PDDeprecation >> version [
 	^ version
 ]
 
 { #category : #accessing }
-DeprecationRule >> version: anObject [
+PDDeprecation >> version: anObject [
 	version := anObject
 ]

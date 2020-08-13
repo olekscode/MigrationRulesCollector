@@ -6,10 +6,14 @@ Class {
 
 { #category : #testing }
 OneToOneRuleCategory >> condition [
-	^ [ :rule |
-			rule consequentTree isMessage and: [
+	^ [ :deprecation |
+		| rule |
+		rule := deprecation transformationRule.
+		
+		rule consequentTree isMessage and: [
 			rule consequentTree receiver isMessage not and: [
-			self areAllArgumentsRewriterVariables: rule consequentTree ] ] ]
+			(rule consequentTree arguments allSatisfy: [ :each |
+				each class = RBPatternVariableNode ]) ] ] ]
 ]
 
 { #category : #accessing }

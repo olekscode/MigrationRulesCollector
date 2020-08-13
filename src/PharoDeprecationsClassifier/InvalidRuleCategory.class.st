@@ -1,6 +1,6 @@
 Class {
 	#name : #InvalidRuleCategory,
-	#superclass : #RewriterRuleCategory,
+	#superclass : #TransformingCategory,
 	#category : #PharoDeprecationsClassifier
 }
 

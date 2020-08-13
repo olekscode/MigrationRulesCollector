@@ -1,16 +1,16 @@
 Class {
-	#name : #RewriterRule,
-	#superclass : #DeprecationRule,
+	#name : #PDTransformationRule,
+	#superclass : #Object,
 	#instVars : [
 		'antecedent',
 		'consequent',
-		'condition'
+		'deprecation'
 	],
 	#category : #PharoDeprecationsCollector
 }
 
 { #category : #comparing }
-RewriterRule >> = anotherRule [
+PDTransformationRule >> = anotherRule [
 	super = anotherRule
 		ifFalse: [ ^ false ].
 	
@@ -24,52 +24,52 @@ RewriterRule >> = anotherRule [
 ]
 
 { #category : #accessing }
-RewriterRule >> antecedent [
+PDTransformationRule >> antecedent [
 	^ antecedent
 ]
 
 { #category : #accessing }
-RewriterRule >> antecedent: anObject [
+PDTransformationRule >> antecedent: anObject [
 	antecedent := anObject
 ]
 
 { #category : #accessing }
-RewriterRule >> antecedentTree [
+PDTransformationRule >> antecedentTree [
 	^ RBParser parseRewriteExpression: antecedent
 ]
 
 { #category : #accessing }
-RewriterRule >> condition [
-	^ condition
-]
-
-{ #category : #accessing }
-RewriterRule >> condition: anObject [
-	condition := anObject
-]
-
-{ #category : #accessing }
-RewriterRule >> consequent [
+PDTransformationRule >> consequent [
 	^ consequent
 ]
 
 { #category : #accessing }
-RewriterRule >> consequent: anObject [
+PDTransformationRule >> consequent: anObject [
 	consequent := anObject
 ]
 
 { #category : #accessing }
-RewriterRule >> consequentTree [
+PDTransformationRule >> consequentTree [
 	^ RBParser parseRewriteExpression: consequent
 ]
 
+{ #category : #accessing }
+PDTransformationRule >> deprecation [
+	^ deprecation
+]
+
+{ #category : #accessing }
+PDTransformationRule >> deprecation: anObject [
+	deprecation := anObject
+]
+
 { #category : #testing }
-RewriterRule >> isRewriterRule [
-	^ true
+PDTransformationRule >> isValid [
+	^ PDTransformationRuleValidator new isValid: self
 ]
 
 { #category : #printing }
-RewriterRule >> printOn: aStream [
+PDTransformationRule >> printOn: aStream [
 	aStream 
 		nextPutAll: self class name;
 		nextPutAll: ' (';

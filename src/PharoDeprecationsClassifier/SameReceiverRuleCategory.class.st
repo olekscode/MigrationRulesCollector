@@ -6,7 +6,7 @@ Class {
 
 { #category : #testing }
 SameReceiverRuleCategory >> condition [ 
-	^ [ :rule | rule antecedentTree receiver = rule consequentTree receiver ]
+	^ [ :deprecation | deprecation transformationRule antecedentTree receiver = deprecation transformationRule consequentTree receiver ]
 ]
 
 { #category : #testing }

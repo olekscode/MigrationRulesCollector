@@ -6,7 +6,10 @@ Class {
 
 { #category : #accessing }
 AddedUnaryMessageRuleCategory >> condition [ 
-	^ [ :rule |
+	^ [ :deprecation |
+		| rule |
+		rule := deprecation transformationRule.
+		
 		rule consequentTree isMessage and: [
 		rule consequentTree receiver isMessage and: [ 
 			(self isUnaryMessageAddedBefore: rule) or: [ 

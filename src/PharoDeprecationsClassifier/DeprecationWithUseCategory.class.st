@@ -1,12 +1,12 @@
 Class {
 	#name : #DeprecationWithUseCategory,
-	#superclass : #DeprecationCategory,
+	#superclass : #NonTransformingCategory,
 	#category : #PharoDeprecationsClassifier
 }
 
 { #category : #accessing }
 DeprecationWithUseCategory >> condition [ 
-	^ [ :deprecation | deprecation explanation asLowercase includesSubstring: 'use' ]
+	^ [ :deprecation | deprecation explanation isString and: [ deprecation explanation asLowercase includesSubstring: 'use' ] ]
 ]
 
 { #category : #accessing }

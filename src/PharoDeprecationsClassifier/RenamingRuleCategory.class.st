@@ -6,7 +6,7 @@ Class {
 
 { #category : #testing }
 RenamingRuleCategory >> condition [ 
-	^ [ :rule | rule antecedentTree arguments = rule consequentTree arguments ]
+	^ [ :deprecation | deprecation transformationRule antecedentTree arguments = deprecation transformationRule consequentTree arguments ]
 ]
 
 { #category : #testing }

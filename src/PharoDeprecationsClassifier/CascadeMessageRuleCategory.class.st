@@ -6,7 +6,7 @@ Class {
 
 { #category : #accessing }
 CascadeMessageRuleCategory >> condition [ 
-	^ [ :rule | rule consequentTree isCascade ]
+	^ [ :deprecation | deprecation transformationRule consequentTree isCascade ]
 ]
 
 { #category : #accessing }
