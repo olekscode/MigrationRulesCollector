@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'rules'
 	],
-	#category : #MigrationRulesCollector
+	#category : #PharoDeprecationsCollector
 }
 
 { #category : #'as yet unclassified' }

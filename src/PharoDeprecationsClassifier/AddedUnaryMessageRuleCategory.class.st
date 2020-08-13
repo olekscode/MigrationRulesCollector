@@ -1,7 +1,7 @@
 Class {
 	#name : #AddedUnaryMessageRuleCategory,
 	#superclass : #OneToManyRuleCategory,
-	#category : #MigrationRulesClassifier
+	#category : #PharoDeprecationsClassifier
 }
 
 { #category : #accessing }

@@ -1,7 +1,7 @@
 Class {
 	#name : #ArgumentsRemovedRuleCategory,
 	#superclass : #SameReceiverRuleCategory,
-	#category : #MigrationRulesClassifier
+	#category : #PharoDeprecationsClassifier
 }
 
 { #category : #testing }

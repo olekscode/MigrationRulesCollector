@@ -6,7 +6,7 @@ Class {
 		'consequent',
 		'condition'
 	],
-	#category : #MigrationRulesCollector
+	#category : #PharoDeprecationsCollector
 }
 
 { #category : #comparing }

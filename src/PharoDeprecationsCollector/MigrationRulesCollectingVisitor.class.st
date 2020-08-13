@@ -5,7 +5,7 @@ Class {
 		'rules',
 		'deprecationSelector'
 	],
-	#category : #MigrationRulesCollector
+	#category : #PharoDeprecationsCollector
 }
 
 { #category : #initialization }

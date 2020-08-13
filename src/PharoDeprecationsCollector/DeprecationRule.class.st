@@ -7,7 +7,7 @@ Class {
 		'date',
 		'version'
 	],
-	#category : #MigrationRulesCollector
+	#category : #PharoDeprecationsCollector
 }
 
 { #category : #comparing }

@@ -1,7 +1,7 @@
 Class {
 	#name : #DeprecationWithUseCategory,
 	#superclass : #DeprecationCategory,
-	#category : #MigrationRulesClassifier
+	#category : #PharoDeprecationsClassifier
 }
 
 { #category : #accessing }

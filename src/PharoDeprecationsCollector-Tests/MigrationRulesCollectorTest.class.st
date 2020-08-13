@@ -1,7 +1,7 @@
 Class {
 	#name : #MigrationRulesCollectorTest,
 	#superclass : #TestCase,
-	#category : #'MigrationRulesCollector-Tests'
+	#category : #'PharoDeprecationsCollector-Tests'
 }
 
 { #category : #'as yet unclassified' }

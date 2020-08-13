@@ -1,7 +1,7 @@
 Class {
 	#name : #OneToOneRuleCategory,
 	#superclass : #ValidRuleCategory,
-	#category : #MigrationRulesClassifier
+	#category : #PharoDeprecationsClassifier
 }
 
 { #category : #testing }

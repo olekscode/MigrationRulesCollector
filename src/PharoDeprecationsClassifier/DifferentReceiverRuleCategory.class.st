@@ -1,7 +1,7 @@
 Class {
 	#name : #DifferentReceiverRuleCategory,
 	#superclass : #OneToOneRuleCategory,
-	#category : #MigrationRulesClassifier
+	#category : #PharoDeprecationsClassifier
 }
 
 { #category : #accessing }

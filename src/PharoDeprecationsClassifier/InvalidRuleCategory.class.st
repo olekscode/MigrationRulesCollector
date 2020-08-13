@@ -1,7 +1,7 @@
 Class {
 	#name : #InvalidRuleCategory,
 	#superclass : #RewriterRuleCategory,
-	#category : #MigrationRulesClassifier
+	#category : #PharoDeprecationsClassifier
 }
 
 { #category : #accessing }

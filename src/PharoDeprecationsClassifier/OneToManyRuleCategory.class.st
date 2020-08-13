@@ -1,7 +1,7 @@
 Class {
 	#name : #OneToManyRuleCategory,
 	#superclass : #ValidRuleCategory,
-	#category : #MigrationRulesClassifier
+	#category : #PharoDeprecationsClassifier
 }
 
 { #category : #accessing }

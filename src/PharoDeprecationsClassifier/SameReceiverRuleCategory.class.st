@@ -1,7 +1,7 @@
 Class {
 	#name : #SameReceiverRuleCategory,
 	#superclass : #OneToOneRuleCategory,
-	#category : #MigrationRulesClassifier
+	#category : #PharoDeprecationsClassifier
 }
 
 { #category : #testing }

@@ -1,7 +1,7 @@
 Class {
 	#name : #RuleCategory,
 	#superclass : #Category,
-	#category : #MigrationRulesClassifier
+	#category : #PharoDeprecationsClassifier
 }
 
 { #category : #initialization }

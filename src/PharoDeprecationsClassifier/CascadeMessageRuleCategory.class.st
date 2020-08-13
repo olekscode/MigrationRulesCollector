@@ -1,7 +1,7 @@
 Class {
 	#name : #CascadeMessageRuleCategory,
 	#superclass : #OneToManyRuleCategory,
-	#category : #MigrationRulesClassifier
+	#category : #PharoDeprecationsClassifier
 }
 
 { #category : #accessing }
