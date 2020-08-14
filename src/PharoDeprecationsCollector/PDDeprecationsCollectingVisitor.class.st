@@ -108,4 +108,6 @@ PDDeprecationsCollectingVisitor >> visitMessageNode: aMessageNode [
 	
 	options at: aMessageNode selector
 		ifPresent: [ :aBlock | aBlock value ].
+		
+	super visitMessageNode: aMessageNode.
 ]
