@@ -16,6 +16,9 @@ PDTransformationRuleValidator >> isAntecedentDifferentFromConsequent: aRule [
 
 { #category : #testing }
 PDTransformationRuleValidator >> isAntecedentSameAsDeprecatedSelector: aRule [
+	"If a rule is not linked to a deprecated method we consider this condition satisfied"
+	aRule deprecation ifNil: [ ^ true ].
+
 	^ aRule antecedentTree isMessage and: [
 		aRule antecedentTree selector = aRule deprecation method selector ]
 ]
