@@ -51,10 +51,9 @@ PDDeprecationsCollectorTest >> testDeprecatedOnInTransformWith [
 			date: '3/18/1996' asDate;
 			version: 'v2.1.0';
 			method: self class >> #mockDeprecatedOnInTransformWith;
-			transformationRule: (PDTransformationRule new
-				antecedent: '`@receiver basicDescription: `@arg';
-				consequent: '`@receiver description: `@arg';
-				yourself);
+			transformationRule: (TransformationRule
+				antecedent: '`@receiver basicDescription: `@arg'
+				consequent: '`@receiver description: `@arg');
 			yourself }.
 	
 	self assert: actual equals: expected.
@@ -73,10 +72,9 @@ PDDeprecationsCollectorTest >> testDeprecatedOnInTransformWithWhen [
 			date: '3/18/1996' asDate;
 			version: 'v2.1.0';
 			method: self class >> #mockDeprecatedOnInTransformWithWhen;
-			transformationRule: (PDTransformationRule new
-				antecedent: '`@receiver basicDescription: `@arg';
-				consequent: '`@receiver description: `@arg';
-				yourself);
+			transformationRule: (TransformationRule
+				antecedent: '`@receiver basicDescription: `@arg'
+				consequent: '`@receiver description: `@arg');
 			transformationCondition: [ true ];
 			yourself }.
 	
@@ -94,10 +92,9 @@ PDDeprecationsCollectorTest >> testDeprecatedTransformWith [
 		PDDeprecation new
 			explanation: 'This method is deprecated for some reason';
 			method: self class >> #mockDeprecatedTransformWith;
-			transformationRule: (PDTransformationRule new
-				antecedent: '`@receiver basicDescription: `@arg';
-				consequent: '`@receiver description: `@arg';
-				yourself);
+			transformationRule: (TransformationRule
+				antecedent: '`@receiver basicDescription: `@arg'
+				consequent: '`@receiver description: `@arg');
 			yourself }.
 	
 	self assert: actual equals: expected.
@@ -114,10 +111,9 @@ PDDeprecationsCollectorTest >> testDeprecatedTransformWithWhen [
 		PDDeprecation new
 			explanation: 'This method is deprecated for some reason';
 			method: self class >> #mockDeprecatedTransformWithWhen;
-			transformationRule: (PDTransformationRule new
-				antecedent: '`@receiver basicDescription: `@arg';
-				consequent: '`@receiver description: `@arg';
-				yourself);
+			transformationRule: (TransformationRule
+				antecedent: '`@receiver basicDescription: `@arg'
+				consequent: '`@receiver description: `@arg');
 			transformationCondition: [ true ];
 			yourself }.
 	

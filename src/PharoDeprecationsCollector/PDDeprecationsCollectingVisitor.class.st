@@ -15,10 +15,19 @@ PDDeprecationsCollectingVisitor >> deprecations [
 
 { #category : #'as yet unclassified' }
 PDDeprecationsCollectingVisitor >> extractTransformationRuleFrom: aNode [
-	^ PDTransformationRule new
-		antecedent: 	aNode receiver value;
-		consequent: aNode arguments first value;
-		yourself.
+	| antecedent consequent |
+	(aNode isMessage and: [ aNode selector = #-> ])
+		ifFalse: [ ^ nil ].
+		
+	antecedent := aNode receiver value.
+	consequent := aNode arguments first value.
+	
+	(antecedent isString and: [ consequent isString ])
+		ifFalse: [ ^ nil ].
+	
+	^ TransformationRule
+		antecedent: 	antecedent
+		consequent: consequent.
 ]
 
 { #category : #initialization }

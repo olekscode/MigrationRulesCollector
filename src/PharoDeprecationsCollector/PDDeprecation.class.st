@@ -94,7 +94,6 @@ PDDeprecation >> transformationRule [
 { #category : #accessing }
 PDDeprecation >> transformationRule: aRule [
 	transformationRule := aRule.
-	aRule deprecation: self.
 ]
 
 { #category : #accessing }
