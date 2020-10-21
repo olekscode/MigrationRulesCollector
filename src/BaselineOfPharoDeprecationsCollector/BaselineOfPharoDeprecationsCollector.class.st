@@ -10,12 +10,16 @@ BaselineOfPharoDeprecationsCollector >> baseline: spec [
 	spec for: #common do: [	
 		"External dependencies"
 		spec
+			baseline: 'TransformationRule'
+			with: [ spec repository: 'github://olekscode/TransformationRule/src' ].
+		
+		spec
 			baseline: 'ManualClassifier'
 			with: [ spec repository: 'github://olekscode/ManualClassifier/src' ].
 				
 		"Packages"
 		spec 
-			package: 'PharoDeprecationsCollector';
+			package: 'PharoDeprecationsCollector' with: [ spec requires: #('TransformationRule') ];
 			package: 'PharoDeprecationsCollector-Tests' with: [ spec requires: #(PharoDeprecationsCollector) ];
 			package: 'PharoDeprecationsClassifier' with: [ spec requires: #(ManualClassifier PharoDeprecationsCollector) ] ].
 ]
