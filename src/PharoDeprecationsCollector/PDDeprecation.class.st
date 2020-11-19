@@ -76,6 +76,13 @@ PDDeprecation >> printOn: aStream [
 		nextPut: $).
 ]
 
+{ #category : #'ston persistence' }
+PDDeprecation >> stonOn: stonWriter [
+	stonWriter writeObject: (self copy
+		explanation: explanation asString;
+		yourself)
+]
+
 { #category : #accessing }
 PDDeprecation >> transformationCondition [
 	^ transformationCondition
