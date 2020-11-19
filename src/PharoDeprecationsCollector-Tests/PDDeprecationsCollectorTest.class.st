@@ -51,7 +51,7 @@ PDDeprecationsCollectorTest >> testDeprecatedOnInTransformWith [
 			date: '3/18/1996' asDate;
 			version: 'v2.1.0';
 			method: self class >> #mockDeprecatedOnInTransformWith;
-			transformationRule: (TransformationRule
+			transformationRule: (PDTransformationRule
 				antecedent: '`@receiver basicDescription: `@arg'
 				consequent: '`@receiver description: `@arg');
 			yourself }.
@@ -72,7 +72,7 @@ PDDeprecationsCollectorTest >> testDeprecatedOnInTransformWithWhen [
 			date: '3/18/1996' asDate;
 			version: 'v2.1.0';
 			method: self class >> #mockDeprecatedOnInTransformWithWhen;
-			transformationRule: (TransformationRule
+			transformationRule: (PDTransformationRule
 				antecedent: '`@receiver basicDescription: `@arg'
 				consequent: '`@receiver description: `@arg');
 			transformationCondition: [ true ];
@@ -92,7 +92,7 @@ PDDeprecationsCollectorTest >> testDeprecatedTransformWith [
 		PDDeprecation new
 			explanation: 'This method is deprecated for some reason';
 			method: self class >> #mockDeprecatedTransformWith;
-			transformationRule: (TransformationRule
+			transformationRule: (PDTransformationRule
 				antecedent: '`@receiver basicDescription: `@arg'
 				consequent: '`@receiver description: `@arg');
 			yourself }.
@@ -111,7 +111,7 @@ PDDeprecationsCollectorTest >> testDeprecatedTransformWithWhen [
 		PDDeprecation new
 			explanation: 'This method is deprecated for some reason';
 			method: self class >> #mockDeprecatedTransformWithWhen;
-			transformationRule: (TransformationRule
+			transformationRule: (PDTransformationRule
 				antecedent: '`@receiver basicDescription: `@arg'
 				consequent: '`@receiver description: `@arg');
 			transformationCondition: [ true ];

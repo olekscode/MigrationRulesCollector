@@ -1,6 +1,6 @@
 Class {
 	#name : #InvalidRuleCategory,
-	#superclass : #TransformingCategory,
+	#superclass : #CanParseRuleCategory,
 	#category : #PharoDeprecationsClassifier
 }
 

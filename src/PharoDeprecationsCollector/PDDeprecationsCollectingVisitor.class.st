@@ -25,7 +25,7 @@ PDDeprecationsCollectingVisitor >> extractTransformationRuleFrom: aNode [
 	(antecedent isString and: [ consequent isString ])
 		ifFalse: [ ^ nil ].
 	
-	^ TransformationRule
+	^ PDTransformationRule
 		antecedent: 	antecedent
 		consequent: consequent.
 ]
